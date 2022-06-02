@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Leftbar from "./components/organisms/Leftbar";
+import Rightbar from "./components/organisms/Rightbar";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-mygray-5 min-h-screen w-full flex relative">
+      <Leftbar />
+      <Home />
+      <Rightbar />
     </div>
   );
 }
