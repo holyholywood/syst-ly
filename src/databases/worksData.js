@@ -5,7 +5,6 @@ const works = [
     name: "Journal Search",
     assigner: team[0].name,
     creator: "Dio Ilham",
-    creator: "Dio Ilham",
     deadline: "5 June 2022",
   },
   {

@@ -24,7 +24,7 @@ const Rightbar = () => {
           {notifications.map((notification, index) => {
             return (
               <li
-                className="flex gap-x-1 w-full justify-between items-center"
+                className="flex gap-x-1 w-full justify-between items-center my-2"
                 key={index}
               >
                 <div className="w-6 rounded-full mr-1  bg-mygreen  h-6 text-white flex justify-center">
