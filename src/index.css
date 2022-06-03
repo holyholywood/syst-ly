@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .activemenu {
+    @apply w-1 h-full bg-myblue-1 absolute -right-4 top-0 rounded-l-sm;
+  }
+}

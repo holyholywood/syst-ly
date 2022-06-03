@@ -6,7 +6,7 @@ import notifications from "../../databases/notificationsData";
 import works from "../../databases/worksData";
 const Rightbar = () => {
   return (
-    <section className="w-96 h-screen bg-white  sticky top-0 right-0 pt-12 left-shadow">
+    <section className="w-96 2xl:w-[450px] h-screen bg-white  sticky top-0 right-0 pt-12 left-shadow overflow-y-auto">
       <button
         className="flex w-full justify-between hover:bg-mygray-4 px-3 py-1
       text-mygray-1 font-bold"

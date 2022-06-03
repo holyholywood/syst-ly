@@ -11,11 +11,11 @@ import {
 import asset1 from "../../img/asset1.png";
 const Leftbar = () => {
   return (
-    <section className="w-80 h-screen bg-white px-4 sticky top-0 right-shadow">
+    <section className="w-80 2xl:w-96 h-screen bg-white px-4 sticky top-0 right-shadow">
       <Brand />
       <ul className="grid grid-cols-1 gap-y-6">
-        <li>
-          <button className="flex items-center w-full justify-between pr-10">
+        <li className="relative after:activemenu">
+          <button className="flex items-center w-full justify-between pr-10 2xl:pr-16">
             <HomeIcon className="w-6 text-myblue-1" />
             <strong className="text-mygray-1">Dashboard</strong>
           </button>

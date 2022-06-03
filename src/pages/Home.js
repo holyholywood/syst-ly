@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { SearchIcon, PlusCircleIcon } from "@heroicons/react/outline";
+import { SearchIcon } from "@heroicons/react/outline";
 import works from "../databases/worksData";
 import team from "../databases/teamName";
+import TeamCard from "../components/molecules/TeamCard";
 const Home = () => {
   const [date, setDate] = useState();
   useEffect(() => {
@@ -36,32 +37,9 @@ const Home = () => {
       </div>
       <h1 className="font-semibold text-mygray-2 my-4">Your Team's</h1>
       <div className="grid grid-cols-3 place-items-center">
-        <div className="bg-mygreen rounded  w-44 h-44 place-self-start">
-          <div className="bg-mygray-4 w-20 h-20 rounded-full mx-auto mt-4"></div>
-          <h4 className="text-white block text-center font-bold mt-4">
-            {team[0].name}
-          </h4>
-          <a href="/#" className="mt-2 ml-3 block text-sm text-white">
-            View Profile
-          </a>
-        </div>
-        <div className="bg-myred rounded  w-44 h-44">
-          <div className="bg-mygray-4 w-20 h-20 rounded-full mx-auto mt-4"></div>
-          <h4 className="text-white block text-center font-bold mt-4">
-            {team[1].name}
-          </h4>
-          <a href="/#" className="mt-2 ml-3 block text-sm text-white">
-            View Profile
-          </a>
-        </div>
-        <div className="bg-myblue-1  rounded w-44 h-44 place-self-end">
-          <div className="bg-myblue-1 w-20 h-20 rounded-full mx-auto mt-4">
-            <PlusCircleIcon className="w-full text-white" />
-          </div>
-          <h4 className="text-white block text-center font-bold mt-4">
-            Search for Team's
-          </h4>
-        </div>
+        <TeamCard color="mygreen" teamName={team[0].name} />
+        <TeamCard color="myred" teamName={team[1].name} />
+        <TeamCard color="myblue-1" teamName="Search for Teams" search={true} />
       </div>
       <h1 className="font-semibold text-mygray-2 my-4">Your Assignment's</h1>
       {works.map((work, index) => {
