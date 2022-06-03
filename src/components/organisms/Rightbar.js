@@ -41,9 +41,9 @@ const Rightbar = () => {
         {works.map((work, index) => {
           return (
             <div className="flex gap-x-2 my-2 items-center" key={index}>
-              <div className="bg-mygreen w-5 flex justify-center items-center h-5 rounded">
+              <button className="bg-mygreen w-5 flex justify-center items-center h-5 rounded">
                 <BellIcon className="w-4 text-white" />
-              </div>
+              </button>
               <div className="flex flex-col">
                 <span className=" text-mygray-1 text-xs font-bold">
                   {work.name}
