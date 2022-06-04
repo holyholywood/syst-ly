@@ -9,7 +9,7 @@ const Rightbar = () => {
     <section className="w-96 2xl:w-[450px] h-screen bg-white  sticky top-0 right-0 pt-12 left-shadow overflow-y-auto">
       <button
         className="flex w-full justify-between hover:bg-mygray-4 px-3 py-1
-      text-mygray-1 font-bold"
+      text-mygray-1 font-bold duration-500"
       >
         Logout
         <LogoutIcon className="w-6 text-mygray-2" />
@@ -40,7 +40,10 @@ const Rightbar = () => {
 
         {works.map((work, index) => {
           return (
-            <div className="flex gap-x-2 my-2 items-center" key={index}>
+            <div
+              className="flex gap-x-2 my-2 items-center cursor-pointer hover:bg-mygray-5"
+              key={index}
+            >
               <button className="bg-mygreen w-5 flex justify-center items-center h-5 rounded">
                 <BellIcon className="w-4 text-white" />
               </button>

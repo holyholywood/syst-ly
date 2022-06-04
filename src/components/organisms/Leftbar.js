@@ -14,6 +14,8 @@ import asset1 from "../../img/asset1.png";
 const Leftbar = () => {
   const [closeState, setcloseState] = useState("w-96");
   const [isClose, setIsClose] = useState(false);
+  const [isTeamOpen, SetTeamOpen] = useState(false);
+  const [isWorkOpen, SetWorkOpen] = useState(false);
   return (
     <section
       className={`2xl:w-${closeState} h-screen bg-white ${
@@ -27,6 +29,8 @@ const Leftbar = () => {
         onClick={() => {
           !isClose ? setIsClose(true) : setIsClose(false);
           closeState === "w-96" ? setcloseState("w-14") : setcloseState("w-96");
+          isTeamOpen && SetTeamOpen(false);
+          isWorkOpen && SetWorkOpen(false);
         }}
       >
         {!isClose ? (
@@ -40,7 +44,7 @@ const Leftbar = () => {
         <li className={`relative ${!isClose && "after:activemenu"}`}>
           <button
             className={`flex items-center w-full justify-between ${
-              !isClose && "pr-10 2xl:pr-16"
+              !isClose && "pr-12 2xl:pr-16"
             } `}
           >
             <HomeIcon className="w-6 text-myblue-1" />
@@ -48,37 +52,49 @@ const Leftbar = () => {
           </button>
         </li>
         <li className="text-mygray-6">
-          <button className="flex items-center w-full justify-between">
+          <button
+            className="w-full grid grid-cols-3"
+            onClick={() => {
+              !isTeamOpen ? SetTeamOpen(true) : SetTeamOpen(false);
+            }}
+          >
             <UserGroupIcon className="w-6" />
             {!isClose && (
               <>
-                <strong className="flex">Team's</strong>
-                <ChevronDownIcon className="w-5" />
+                <strong className="">Team's</strong>
+                <ChevronDownIcon className="w-5 place-self-end" />
               </>
             )}
           </button>
-          <ul className="hidden">
+          <ul className={`pl-10 ${!isTeamOpen && "hidden"}`}>
             {team.map((team, index) => {
               return <li key={index}>{team.name}</li>;
             })}
           </ul>
         </li>
         <li className="text-mygray-6">
-          <button className="flex items-center w-full justify-between">
+          <button
+            className="w-full grid grid-cols-3"
+            onClick={() => {
+              !isWorkOpen ? SetWorkOpen(true) : SetWorkOpen(false);
+            }}
+          >
             <BriefcaseIcon className="w-6" />
             {!isClose && (
               <>
                 {" "}
                 <strong>Work's</strong>
-                <ChevronDownIcon className="w-5" />
+                <ChevronDownIcon className="w-5  place-self-end" />
               </>
             )}
           </button>
-          <ul className="hidden">
+          <ul
+            className={`pl-10 flex flex-col gap-y-2 ${!isWorkOpen && "hidden"}`}
+          >
             {works.map((work, index) => {
               return (
                 <li key={index}>
-                  {work.name} -
+                  {work.name} -{" "}
                   {work.assigner.length > 3
                     ? work.assigner.substring(0, 4) + "..."
                     : work.assigner}
@@ -92,8 +108,8 @@ const Leftbar = () => {
         </li>
       </ul>
       {!isClose && (
-        <div className="rounded bg-myblue-2 w-44 h-44 2xl:w-56 -mb-10 absolute bottom-20 px-1 flex flex-col gap-2">
-          <img src={asset1} alt="work" className="w-22 -m-10 mb-6 mx-auto" />
+        <div className="rounded hidden duration-1000 transition-opacity bg-myblue-2 w-44 h-40 2xl:w-56 -mb-10 absolute bottom-14 px-1  flex-col gap-2">
+          <img src={asset1} alt="work" className="w-16 -m-6 mb-1 mx-auto" />
           <p className="text-center text-mygray-1 font-semibold">
             More Service's from Semanticsm
           </p>

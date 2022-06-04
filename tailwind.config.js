@@ -1,6 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +12,7 @@ module.exports = {
           2: "#BFDBFE",
           3: "#3B82F6",
         },
+        myred: "#EF4444",
         mygray: {
           1: "#18181B",
           2: "#71717A",
@@ -20,7 +21,6 @@ module.exports = {
           5: "#f5f5f5",
           6: "#333336",
         },
-        myred: "#EF4444",
         mygreen: "#22C55E",
       },
     },
