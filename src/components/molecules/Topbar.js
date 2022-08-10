@@ -1,4 +1,3 @@
-import { SearchIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import SearchButton from "../atoms/SearchButton";
 
